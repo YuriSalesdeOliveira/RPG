@@ -12,6 +12,24 @@ function character()
 {
     const position = { x: 4, y: 5, size: 30 }
     const side = { down: 0, left: -30, right: -60, up: -90 }
+    const mapSpots = [
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+        [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+        [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+        [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+        [0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0],
+        [0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0],
+        [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+        [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+        [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+        [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+        [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    ];
 
     const character = document.createElement('div')
     character.style.position = 'absolute'
@@ -24,29 +42,56 @@ function character()
 
     const moveLeft = function()
     {
-        position.x = position.x - 1
-        character.style.left = `${position.x * position.size}px`
+        nextPosition = position.x - 1
+
+        if (mapSpots[position.y][nextPosition])
+        {
+            position.x = nextPosition
+
+            character.style.left = `${position.x * position.size}px`
+        }
+
         character.style.backgroundPosition = `0px ${side.left}px`
     }
 
     const moveRight = function()
     {
-        position.x = position.x + 1
-        character.style.left = `${position.x * position.size}px`
+        nextPosition = position.x + 1
+
+        if (mapSpots[position.y][nextPosition])
+        {
+            position.x = nextPosition
+
+            character.style.left = `${position.x * position.size}px`
+        }
+
         character.style.backgroundPosition = `0px ${side.right}px`
     }
 
     const moveUp = function()
     {
-        position.y = position.y - 1
-        character.style.top = `${position.y * position.size}px`
+        nextPosition = position.y - 1
+        
+        if (mapSpots[nextPosition][position.x])
+        {
+            position.y = nextPosition
+
+            character.style.top = `${position.y * position.size}px`
+        }
         character.style.backgroundPosition = `0px ${side.up}px`
     }
 
     const moveDown = function()
     {
-        position.y = position.y + 1
-        character.style.top = `${position.y * position.size}px`
+        nextPosition = position.y + 1
+
+        if (mapSpots[nextPosition][position.x])
+        {
+            position.y = nextPosition
+
+            character.style.top = `${position.y * position.size}px`
+        }
+
         character.style.backgroundPosition = `0px ${side.down}px`
     }
 
