@@ -1,4 +1,4 @@
-export default class Character extends HTMLElement
+class Character extends HTMLElement
 {
     constructor()
     {
@@ -72,4 +72,17 @@ export default class Character extends HTMLElement
         `
         return style
     }
+}
+
+customElements.define('character-character', Character)
+
+export const createCharacter = (x, y, size, side) => {
+
+    const character = document.createElement('character-character')
+    character.setAttribute('data-x', x)
+    character.setAttribute('data-y', y)
+    character.setAttribute('data-size', size)
+    character.setAttribute('data-side', side)
+
+    return character
 }

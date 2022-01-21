@@ -1,6 +1,4 @@
-import { mapSpots } from '../data/gramMap/mapSpots.js'
-
-export const useCharacter = (character) => {
+export const useCharacter = (character, mapSpots) => {
 
     const position = {
         x: parseInt(character.getAttribute('data-x')),
@@ -17,7 +15,7 @@ export const useCharacter = (character) => {
         return false
     }
 
-    function moveLeft()
+    function ArrowLeft()
     {   
         if (checkMovement(position.x - 1, position.y))
         {
@@ -28,7 +26,7 @@ export const useCharacter = (character) => {
         character.setAttribute('data-side', 'left')
     }
 
-    function moveRight()
+    function ArrowRight()
     {
         if (checkMovement(position.x + 1, position.y))
         {
@@ -38,7 +36,7 @@ export const useCharacter = (character) => {
         character.setAttribute('data-side', 'right')
     }
 
-    function moveUp()
+    function ArrowUp()
     {
         if (checkMovement(position.x, position.y - 1))
         {
@@ -48,7 +46,7 @@ export const useCharacter = (character) => {
         character.setAttribute('data-side', 'up')
     }
 
-    function moveDown()
+    function ArrowDown()
     {
         if (checkMovement(position.x, position.y + 1))
         {
@@ -59,9 +57,9 @@ export const useCharacter = (character) => {
     }
 
     return {
-        moveLeft,
-        moveRight,
-        moveDown,
-        moveUp
+        ArrowLeft,
+        ArrowRight,
+        ArrowUp,
+        ArrowDown
     }
 }
