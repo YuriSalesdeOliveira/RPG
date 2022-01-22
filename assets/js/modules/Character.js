@@ -84,5 +84,13 @@ export const createCharacter = (x, y, size, side) => {
     character.setAttribute('data-size', size)
     character.setAttribute('data-side', side)
 
-    return character
+    return {
+        element: character,
+        changePosition: function({ x, y, side })
+        {
+            character.setAttribute('data-x', x)
+            character.setAttribute('data-y', y)
+            character.setAttribute('data-side', side)
+        }
+    }
 }

@@ -1,36 +1,41 @@
-import { createCharacter } from './components/Character.js'
-import { useCharacter } from './components/useCharacter.js'
-import { map } from './data/gramMap/map.js'
+import { createCharacter } from './modules/Character.js'
+import { useCharacter } from './modules/useCharacter.js'
+import Map from './data/Map.js'
 
-function character()
-{
+function app()
+{  
+    let map = Map.getMap()
+
     const character = createCharacter(3, 5, 30, 'down')
-    const useChar = useCharacter(character, map.mapSpots)
 
-    addEventListener('keydown', (event) => { 
+    addEventListener('keydown', (event) => {
+
+        const useChar = useCharacter(character, map, ({ mapId }) => {
+
+            map = Map.getMap(mapId)
+    
+            app.style.backgroundImage = `url(${map.url})`
+        })
 
         if (useChar.hasOwnProperty(event.code))
         {
-            const command = useChar[event.code]
+            let command = useChar[event.code]
+            let characterPosition = command()
             
-            command()
+            character.changePosition(characterPosition)
         }
 
     })
 
-    return character
-}
-
-function app()
-{  
     const app = document.querySelector('div[class="app"]')
     app.style.position = 'relative'
     app.style.width = '480px'
     app.style.height = '480px'
+    app.style.margin = '0 auto'
     app.style.backgroundImage = `url(${map.url})`
     app.style.backgroundPosition = `center`
 
-    app.appendChild(character())
+    app.appendChild(character.element)
     
 }
 
