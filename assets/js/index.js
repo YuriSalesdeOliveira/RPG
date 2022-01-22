@@ -1,6 +1,6 @@
 import { createCharacter } from './modules/Character.js'
-import { useCharacter } from './modules/useCharacter.js'
-import Map from './data/Map.js'
+import { useCharacter } from './functions/useCharacter.js'
+import Map from './modules/Map.js'
 
 function app()
 {  
@@ -11,7 +11,7 @@ function app()
     addEventListener('keydown', (event) => {
 
         const useChar = useCharacter(character, map, ({ mapId }) => {
-            
+
             map = Map.getMap(mapId)
     
             app.style.backgroundImage = `url(${map.url})`
@@ -36,7 +36,6 @@ function app()
     app.style.backgroundPosition = `center`
 
     app.appendChild(character.element)
-    
 }
 
 app()
