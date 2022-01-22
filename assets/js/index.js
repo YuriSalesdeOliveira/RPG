@@ -11,7 +11,7 @@ function app()
     addEventListener('keydown', (event) => {
 
         const useChar = useCharacter(character, map, ({ mapId }) => {
-
+            
             map = Map.getMap(mapId)
     
             app.style.backgroundImage = `url(${map.url})`
