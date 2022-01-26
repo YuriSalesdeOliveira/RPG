@@ -1,4 +1,4 @@
-# RPG
+# myFirstGame
 
 Meu primeiro jogo !
 
