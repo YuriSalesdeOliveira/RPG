@@ -1,24 +1,19 @@
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/54549125/151983025-5a387ed8-d301-4aa4-ade8-15e7decf3e45.gif" width="400">
+</p>
+
 # myFirstGame
 
-Meu primeiro jogo !
+Um jogo simples com três mapas e um personagem. Foi divertido e desafiador criar esse jogo, como o Java Script não é a minha linguagem principal, claro que houveram desafios ao longo do desenvolvimento.
 
-Nesse jogo existem vários mapas e um único personagem. Atualmente o jogo permite mover o personagem e alternar entre os mapas
-
-Foi divertido e desafiador criar esse jogo. Pude praticar Java Script e também o conceito de modulos.
-
-O Java Script não é a minha linguagem principal, então, claro que tive bastante desafios ao longo do desenvolvimento do jogo.
-
-![2022-01-26-00-42-02-_online-video-cutter com_](https://user-images.githubusercontent.com/54549125/151100687-004d71e8-eed8-4b0c-b235-5be6c996d55f.gif)
-
-
-- Onde posso ver sua demonstração? [Click aqui](https://yurisalesdeoliveira.github.io/myFirstGame/)
+Onde posso ver sua demonstração? [Click aqui](https://yurisalesdeoliveira.github.io/myFirstGame/)
 
 ### Tecnologias
 
 - HTML
 - JS
 
-## Contato
+### Contato
 
 - Linkedin [@Yuri Oliveira](https://www.linkedin.com/in/yuri-oliveira-0703801a2/)
 
